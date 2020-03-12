@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "377732600700",
+    "firebase_url": "https://applimobileprojet.firebaseio.com",
+    "project_id": "applimobileprojet",
+    "storage_bucket": "applimobileprojet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377732600700:android:aa2d93455d200562154af9",
+        "android_client_info": {
+          "package_name": "com.example.Pendu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377732600700-7v8o5vcgd7et4bv3l8odgpvklhs9dfgf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEdtt9wysCVjl8n4CtwxQwO7m11frlru4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "377732600700-7v8o5vcgd7et4bv3l8odgpvklhs9dfgf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377732600700:android:7ea25902015384bf154af9",
+        "android_client_info": {
+          "package_name": "com.example.pendu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377732600700-s30umi72hdvtr18jejsmhm9dqgdk1tjg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pendu",
+            "certificate_hash": "696efa2439741498c2676765923bf73ae9118729"
+          }
+        },
+        {
+          "client_id": "377732600700-7v8o5vcgd7et4bv3l8odgpvklhs9dfgf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEdtt9wysCVjl8n4CtwxQwO7m11frlru4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "377732600700-7v8o5vcgd7et4bv3l8odgpvklhs9dfgf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

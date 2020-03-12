@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controle.Connexion">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height = "match_parent"
+         tools:context = ".MainActivity">
+
+        <TextView android:text = "Login" android:layout_width="wrap_content"
+            android:layout_height = "wrap_content"
+            android:id = "@+id/textview"
+            android:textSize = "35dp"
+            android:layout_alignParentTop = "true"
+            android:layout_centerHorizontal = "true" />
+
+        <TextView
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:text = "Tutorials point"
+            android:id = "@+id/textView"
+            android:layout_below = "@+id/textview"
+            android:layout_centerHorizontal = "true"
+            android:textColor = "#ff7aff24"
+            android:textSize = "35dp" />
+
+        <EditText
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:id = "@+id/ConnectTextLogin"
+            android:hint = "Enter Name"
+            android:focusable = "true"
+            android:textColorHighlight = "#ff7eff15"
+            android:textColorHint = "#ffff25e6"
+            android:layout_marginTop = "46dp"
+            android:layout_below = "@+id/imageView"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_alignParentRight = "true"
+            android:layout_alignParentEnd = "true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:id="@+id/ConnectTtextPassword"
+            android:layout_marginTop="200dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColorHint="#ffff299f" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="login"
+            android:id="@+id/buttonLogin"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/textview"
+            android:layout_toStartOf="@+id/textview" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:id="@+id/buttonCancel"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/textview"
+            android:layout_toEndOf="@+id/textview" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play"
+            android:id="@+id/btnPlay"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

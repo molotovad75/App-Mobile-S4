@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayoutPartie"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/BtnValideLetter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Valider la lettre" />
+
+    <Button
+        android:id="@+id/BtnDeconnecter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Se déconnecter" />
+
+    <TextView
+        android:id="@+id/CoupsRestants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/PartieBtnAcceuil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="go back to the welcome activity" />
+
+    <Button
+        android:id="@+id/PartieBtnDeconnect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deconnect" />
+</LinearLayout>
