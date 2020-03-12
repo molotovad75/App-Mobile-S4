@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -18,25 +17,16 @@ import com.example.pendu.R;
 import com.example.pendu.modele.mot;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class partie extends AppCompatActivity implements View.OnClickListener {
     private mot mot;
     private ArrayList<TextView> listText;
     private TextView coupsRestans;
     private static int NbEssais = 15;
-    private FirebaseAuth mAuth;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private FirebaseUser user = mAuth.getCurrentUser();
-    private FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private DatabaseReference DataMot = database.getReference("mot");
-    private DatabaseReference DataUser = database.getReference("utilisateur");
     private static final String TAG = "mot";
 
     private boolean estGagné;
@@ -45,6 +35,9 @@ public class partie extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.partie);
+        Intent intent = getIntent();
+        this.mot = new mot();
+        mot.setChaineCar(intent.getStringExtra("mot"));
         coupsRestans = findViewById(R.id.CoupsRestants);
         coupsRestans.setText("Nombre de coups restants : " + NbEssais);
         coupsRestans.setTextIsSelectable(false);
@@ -90,22 +83,6 @@ public class partie extends AppCompatActivity implements View.OnClickListener {
                         })
                         .create()
                         .show();
-            }
-        });
-
-        DataMot.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                lireMotData(dataSnapshot);
-            }
-
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
 
@@ -170,14 +147,6 @@ public class partie extends AppCompatActivity implements View.OnClickListener {
             }
         }
     }
-    public void lireMotData(DataSnapshot d) {
-        Random r = new Random();
-        String indMot = String.valueOf(r.nextInt((int) (d.getChildrenCount())));
-        mot mot = new mot();
-        mot.setChaineCar(d.child(indMot).getValue(mot.class).getChaineCar());
-        this.mot = mot;
-        System.out.println(mot.getChaineCar());
-    }
 
     public ArrayList<TextView> placerTxtViewLettre(){
         int margeagauche = 10;
@@ -186,16 +155,14 @@ public class partie extends AppCompatActivity implements View.OnClickListener {
         LinearLayout postLayout = findViewById(R.id.LinearLayoutPartie);
         // Définition du composant Text.
         for (int i=0; i<len; ++i) {
+            System.out.println("passage boucle");
             TextView txtLettre = new TextView(this);
             txtLettre.setId(i);
-            txtLettre.setWidth(15);
-            txtLettre.setLeft(margeagauche);
+            txtLettre.setWidth(100);
+            //txtLettre.setLeft(margeagauche);
             txtLettre.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
             // Définition de la façon dont le composant va remplir le layout.
-            LinearLayout.LayoutParams layoutParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            // Ajout du composant au layout.
-            listText.add(txtLettre);
-            postLayout.addView(txtLettre,layoutParam);
+            postLayout.addView(txtLettre);
             margeagauche += 10;
         }
         return listText;
